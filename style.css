@@ -1,116 +1,95 @@
-/* Import Google Font */
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400..900&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@font-face {
+  font-family: 'Inlander';
+  src: url('Inlander.woff2') format('woff2'),
+       url('Inlander.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
+/* Base body styles */
 body {
   font-family: 'Lexend', sans-serif;
-  background: linear-gradient(to bottom, #fdf0df, #dcecf5);
-  min-height: 100vh;
+  background: linear-gradient(to bottom, #fff4ea, #eaf0f9);
+  margin: 0;
+  padding: 20px;
+  color: #000;
   display: flex;
   justify-content: center;
-  padding: 20px;
 }
 
+/* Container */
 .container {
-  width: 100%;
   max-width: 400px;
+  text-align: center;
   position: relative;
 }
 
-.top-right-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.top-right-icon img {
-  width: 40px;
-  height: 30px;
-}
-
+/* Profile image */
 .profile-pic {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 30px;
-}
-
-.profile-pic img {
-  width: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
 }
 
-.intro {
-  margin-top: 20px;
-  color: #222;
-}
-
+/* Headings */
 h1 {
+  font-size: 26px;
+  margin: 10px 0 5px;
+  font-weight: 400;
+  font-family: 'Lexend', sans-serif;
+}
+
+h2 {
   font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  margin: 0 0 15px;
+  font-weight: 400;
+  font-family: 'Lexend', sans-serif;
 }
 
-.desc {
-  font-size: 12px;
-  margin-bottom: 10px;
-  color: #444;
-}
-
-.domains {
-  font-size: 12px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-.choose {
-  font-size: 12px;
+/* Description text */
+.description {
+  font-family: 'Lexend', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
   margin-bottom: 20px;
+  color: #000;
 }
 
-.button-box {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
+/* Buttons for Economics & UX Design */
 .button {
   display: block;
-  padding: 12px 0;
-  text-align: center;
-  border: 1.5px solid black;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  width: 100%;
+  max-width: 300px;
+  padding: 14px;
+  margin: 10px auto;
+  font-family: 'Inlander', serif;
+  font-size: 40px;
+  font-weight: 400;
+  border: 2px solid #000;
+  border-radius: 10px;
   background-color: #fff;
   color: #000;
   text-decoration: none;
   box-shadow: 2px 2px 0 #000;
-  font-family: monospace;
+  transition: all 0.2s ease;
 }
 
 .button:hover {
-  background-color: #f4f4f4;
-  box-shadow: 4px 4px 0 #000;
+  background-color: #f3f3f3;
+  transform: translateY(-2px);
 }
 
-/* Desktop styling */
-@media (min-width: 600px) {
-  h1 {
-    font-size: 26px;
-  }
-
-  .desc,
-  .domains,
-  .choose {
-    font-size: 14px;
-  }
-
-  .button {
-    font-size: 20px;
-  }
+/* Optional top icon */
+.top-right-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 18px;
+  cursor: pointer;
 }
