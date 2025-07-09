@@ -82,11 +82,15 @@ h2 {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Optional top-right icon */
 .top-right-icon {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 18px;
+  top: 16px;         /* Adjust as needed */
+  right: 24px;       /* Adjust as needed */
+  width: 48px;       /* Set desired icon width */
+  height: 48px;      /* Set desired icon height */
+  font-size: 32px;   /* For font icons (Optional) */
+  border-radius: 50%;/* If it's a circular image */
+  object-fit: cover; /* For image fit */
   cursor: pointer;
+  z-index: 100;
 }
