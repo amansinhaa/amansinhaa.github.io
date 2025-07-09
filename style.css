@@ -1,96 +1,291 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap');
 
-@font-face {
-  font-family: 'Inlander';
-  src: url('Inlander.woff2') format('woff2'),
-       url('Inlander.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Base body styles */
+/* Base body styles with smooth gradient */
 body {
   font-family: 'Lexend', sans-serif;
-  background: linear-gradient(to bottom, #fff4ea, #eaf0f9);
+  background: linear-gradient(135deg, 
+    #fff9f5 0%, 
+    #fef5f1 15%, 
+    #fcf1ed 30%, 
+    #f9ede9 45%, 
+    #f6e9e5 60%, 
+    #f2e5e1 75%, 
+    #ede1dd 90%, 
+    #e8ddd9 100%);
+  min-height: 100vh;
   margin: 0;
   padding: 20px;
-  color: #000;
+  color: #333;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+}
+
+/* Top-right user icon */
+.top-right-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.top-right-icon img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-right-icon img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Container */
 .container {
-  max-width: 400px;
+  max-width: 450px;
+  width: 100%;
   text-align: center;
   position: relative;
+  padding: 20px;
 }
 
-/* Profile image */
-.profile-pic {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 10px auto;
+/* Header section with name and profile image */
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  text-align: left;
+  gap: 20px;
 }
 
 /* Headings */
 h1 {
-  font-size: 26px;
-  margin: 10px 0 5px;
-  font-weight: 400;
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 500;
   font-family: 'Lexend', sans-serif;
+  color: #2c2c2c;
+  line-height: 1.2;
+  flex: 1;
 }
 
-h2 {
-  font-size: 20px;
-  margin: 0 0 15px;
-  font-weight: 400;
-  font-family: 'Lexend', sans-serif;
+/* Profile image */
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Description text */
-.description {
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Unified paragraph styling */
+.desc, .domains, .choose {
   font-family: 'Lexend', sans-serif;
-  font-size: 13px;
+  font-size: clamp(14px, 2.5vw, 16px);
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #000;
+  color: #444;
+  text-align: center;
 }
 
-/* Replacing buttons with image-based options */
+/* Button container */
 .image-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
+  margin-top: 30px;
 }
 
+/* Button styling */
 .image-button {
-  width: 234px;
+  width: 100%;
+  max-width: 280px;
   height: auto;
   cursor: pointer;
-  border-radius: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .image-button:hover {
-  transform: scale(1.02);
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.top-right-icon {
-  position: absolute;
-  top: 16px;         /* Adjust as needed */
-  right: 24px;       /* Adjust as needed */
-  width: 48px;       /* Set desired icon width */
-  height: 48px;      /* Set desired icon height */
-  font-size: 32px;   /* For font icons (Optional) */
-  border-radius: 50%;/* If it's a circular image */
-  object-fit: cover; /* For image fit */
-  cursor: pointer;
-  z-index: 100;
+/* Responsive design for tablets */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .container {
+    max-width: 500px;
+    padding: 15px;
+  }
+  
+  .header-section {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .profile-pic {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .top-right-icon {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .top-right-icon img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .image-buttons {
+    gap: 18px;
+  }
+  
+  .image-button {
+    max-width: 260px;
+  }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  .header-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+  
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .top-right-icon {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .top-right-icon img {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .desc, .domains, .choose {
+    font-size: clamp(13px, 3.5vw, 15px);
+    margin-bottom: 15px;
+  }
+  
+  .image-buttons {
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .image-button {
+    max-width: 240px;
+  }
+}
+
+/* Large screens and Windows scaling */
+@media (min-width: 1200px) {
+  body {
+    padding: 30px;
+  }
+  
+  .container {
+    max-width: 500px;
+    padding: 30px;
+  }
+  
+  .header-section {
+    margin-bottom: 35px;
+  }
+  
+  .profile-pic {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .top-right-icon img {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .image-button {
+    max-width: 300px;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 550px;
+  }
+}
+
+/* High DPI displays (Windows scaling) */
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  .top-right-icon img,
+  .profile-pic img,
+  .image-button {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Smooth animations for all interactive elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Focus states for accessibility */
+.top-right-icon:focus,
+.image-button:focus {
+  outline: 2px solid #4A90E2;
+  outline-offset: 2px;
 }
