@@ -48,9 +48,9 @@ body {
 
 /* Header section with name and profile image */
 .header-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
   margin-bottom: 30px;
   text-align: left;
   gap: 20px;
@@ -58,8 +58,8 @@ body {
 
 /* Profile image */
 .profile-pic {
-  width: 80px;
-  height: 80px;
+  width: 80px !important;
+  height: 80px !important;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
